@@ -1,4 +1,4 @@
-#include  "linked_list.h"
+#include  "../header/linked_list.h"
 
 LinkedList::LinkedList(){
   head = nullptr;
@@ -25,6 +25,17 @@ void LinkedList::insertEnd(int data){
   else {
     tail->next = p;
     tail = p;
+  }
+}
+
+void LinkedList::insertTop(int data){
+  Node *p = new Node;
+  p->data = data;
+  if(head == nullptr)
+      head = p;
+  else{
+    p->next = head;
+    head = p;
   }
 }
 

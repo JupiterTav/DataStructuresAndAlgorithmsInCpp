@@ -1,5 +1,4 @@
-#ifndef LINKED_LIST_H
-#define LINKED_LIST_H
+#pragma once
 #include <iostream>
 using namespace std;
 struct Node{
@@ -17,6 +16,7 @@ class LinkedList{
 
     void insertEnd(int data);
 
+    void insertTop(int data);
+
     void printList();
 };
-#endif
