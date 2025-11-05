@@ -19,8 +19,8 @@ class LinkedList{
     LinkedList(int headData);
 
     void insertEnd(int data);
-
     void insertTop(int data);
+    void insertAtIndex(int data, int index);
 
     void printList();
 

@@ -16,5 +16,11 @@ int main(){
   list.insertTop(2);
   list.printList();
 
+  cout << " ---- Inserting at index ----" << endl;
+  list.insertAtIndex(7, 3);
+  list.insertAtIndex(21, 0);
+  list.insertAtIndex(80, 7);
+  list.printList();
+
   return 0;
 }

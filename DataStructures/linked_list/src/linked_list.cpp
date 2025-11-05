@@ -12,6 +12,38 @@ LinkedList::LinkedList(int data){
   tail = p;
 }
 
+void LinkedList::insertAtIndex(int data, int index){
+  Node *p = new Node;
+  Node *temp_h = new Node;
+  temp_h = head;
+  p->data = data;
+
+  if(head == nullptr){
+    head = p;
+    tail = p;
+  }
+
+  if(index <=0){
+    p->next = head;
+    head = p;
+  }
+  else{
+    
+    while(index-- > 1)
+      temp_h = temp_h->next;
+
+    if(temp_h->next == nullptr){
+      p->next = nullptr;
+      temp_h->next = p;
+      tail = p;
+    } 
+    else{
+      p->next = temp_h->next;
+      temp_h->next = p;
+    }
+  }
+}
+
 void LinkedList::insertEnd(int data){
   Node *p = new Node;
   p->data = data;
@@ -29,8 +61,10 @@ void LinkedList::insertEnd(int data){
 void LinkedList::insertTop(int data){
   Node *p = new Node;
   p->data = data;
-  if(head == nullptr)
+  if(head == nullptr){
       head = p;
+      tail = p;
+  }
   else{
     p->next = head;
     head = p;
