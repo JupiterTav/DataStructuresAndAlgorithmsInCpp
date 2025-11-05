@@ -8,7 +8,6 @@ LinkedList::LinkedList(){
 LinkedList::LinkedList(int data){
   Node *p =  new Node;// (Node *) malloc(sizeof(Node));
   p->data = data;
-  p->next = nullptr;
   head = p;
   tail = p;
 }
@@ -16,7 +15,6 @@ LinkedList::LinkedList(int data){
 void LinkedList::insertEnd(int data){
   Node *p = new Node;
   p->data = data;
-  p->next = nullptr;
 
   if(head == nullptr){
     head = p;

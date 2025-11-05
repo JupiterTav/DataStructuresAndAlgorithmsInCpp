@@ -4,6 +4,10 @@ using namespace std;
 struct Node{
   int data;
   Node *next;
+
+  Node() {
+      next = nullptr;
+  }
 };
 
 class LinkedList{
@@ -19,4 +23,8 @@ class LinkedList{
     void insertTop(int data);
 
     void printList();
+
+
+    int getHead() { return head->data; }
+    int getTail() { return tail->data; }
 };
