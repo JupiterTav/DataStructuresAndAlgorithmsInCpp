@@ -1,4 +1,5 @@
 #include  "../header/linked_list.h"
+#include <cstdlib>
 
 LinkedList::LinkedList(){
   head = nullptr;
@@ -70,6 +71,42 @@ void LinkedList::insertTop(int data){
     head = p;
   }
 }
+
+void LinkedList::removeTail(){
+  Node *p = new Node;
+  Node *temp = new Node;
+  if(head != nullptr){
+    temp = head;
+    while(temp->next->next != nullptr){
+      temp = temp->next;
+    }
+    p = temp->next;
+    temp->next = nullptr;
+    free(p);
+  }
+}
+
+void LinkedList::removeHead(){
+  Node *p = new Node;
+  if(head != nullptr){
+    p = head;
+    head = p->next;
+    free(p);
+  }
+}
+
+void LinkedList::removeAtIndex(int index){
+  Node *p = new Node;
+  Node *temp = new Node;
+  if(head != nullptr && index > 0){
+    temp = head;
+    for(int i = 1; i <= index-1; i++)
+        temp = temp->next;
+    p = temp->next;
+    temp->next = p->next;
+    free(p);
+  }
+} 
 
 void LinkedList::printList(){
   Node *p = new Node;

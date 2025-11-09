@@ -22,5 +22,14 @@ int main(){
   list.insertAtIndex(80, 7);
   list.printList();
 
+  cout << " ---- Removing tail ----" << endl;
+  list.removeTail();
+  list.printList();
+  cout << " ---- Removing head ----" << endl;
+  list.removeHead();
+  list.printList();
+  cout << " ---- Removing at index (3 -> elmt = 7)" << endl;
+  list.removeAtIndex(3);
+  list.printList();
   return 0;
 }

@@ -22,6 +22,10 @@ class LinkedList{
     void insertTop(int data);
     void insertAtIndex(int data, int index);
 
+    void  removeTail();
+    void  removeHead();
+    void  removeAtIndex(int index);
+
     void printList();
 
 
